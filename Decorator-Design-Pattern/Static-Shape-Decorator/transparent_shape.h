@@ -1,14 +1,15 @@
 #pragma once
+
 #include <string>
 #include "shape.h"
 #include "shape_concept.h"
 
 template <IsAShape T>
-class ColoredShape : public T
+class TransparentShape: public T
 {
-    std::string color;
+    float transparency;
     public:
         template <typename... Args>
-        ColoredShape(const std::string& color, Args... args);
+        TransparentShape(float transparency, Args... args);
         std::string introduce() override;
 };

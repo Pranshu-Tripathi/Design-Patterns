@@ -12,7 +12,7 @@ template <IsAShape T>
 std::string ColoredShape<T>::introduce()
 {
     std::ostringstream oss;
-    oss << T::introduce() << " has the color " << color;
+    oss << T::introduce() << " which has the color " << color;
     return oss.str();
 }
 
