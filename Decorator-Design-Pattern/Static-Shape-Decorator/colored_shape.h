@@ -13,9 +13,6 @@ class ColoredShape : public T
     std::string color;
     public:
         template <typename... Args>
-        ColoredShape(const std::string& color, Args... args)
-            : T(std::forward<Args>(args)...), color{color}
-        {
-        }
+        ColoredShape(const std::string& color, Args... args);
         std::string introduce() override;
 };
