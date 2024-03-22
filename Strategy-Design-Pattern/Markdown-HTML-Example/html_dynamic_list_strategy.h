@@ -3,6 +3,7 @@
 
 class HTMLDynamicListStrategy : public DynamicListStrategy {
 public:
+  HTMLDynamicListStrategy(){};
   void start(std::ostringstream &oss) override;
   void end(std::ostringstream &oss) override;
   void add_list_item(std::ostringstream &oss,

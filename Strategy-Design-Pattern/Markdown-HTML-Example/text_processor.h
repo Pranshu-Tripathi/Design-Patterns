@@ -19,3 +19,16 @@ public:
   std::string str() const;
   void set_format(const Format format);
 };
+
+template <typename ListStrategy> class StaticTextProcessor {
+  std::ostringstream oss;
+  ListStrategy list_strategy;
+
+public:
+  StaticTextProcessor<ListStrategy>(){};
+  ~StaticTextProcessor<ListStrategy>() = default;
+
+  void append_list(const std::vector<std::string_view> &items);
+  void clear_list();
+  std::string str() const;
+};
