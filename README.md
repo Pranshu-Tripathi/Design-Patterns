@@ -65,6 +65,7 @@ The solution is dependency inversion by using a mock class that overrides these 
 
   - Getting the interface you want from the interface you have.
   - A construct/mechanism that adapts an existing interface X to conform to the required interface Y.
+  - With growing adapters in a designed system, we can have an abstract level pluggable adapter that will basically be the interface for adapters.
   - Adapters can be used to cache the temporary objects.
      - Intermediate representation can pile up: use caching and other optimizations
      - Maintain a hash of already created objects.
