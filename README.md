@@ -63,13 +63,14 @@ The solution is dependency inversion by using a mock class that overrides these 
 
 ### Adapter Pattern
 
-  - Getting the interface you want from the interface you have.
+  - `Getting the interface you want from the interface you have.`
+  - Two types of implementation: Class Adapter, and Object Adapter.
   - A construct/mechanism that adapts an existing interface X to conform to the required interface Y.
-  - With growing adapters in a designed system, we can have an abstract level pluggable adapter that will basically be the interface for adapters.
+  - With growing adapters in a designed system, we can have an abstract-level pluggable adapter that will be the interface for adapters.
   - Adapters can be used to cache the temporary objects.
      - Intermediate representation can pile up: use caching and other optimizations
      - Maintain a hash of already created objects.
-     - We can return objects from the cache if were already created.
+     - We can return objects from the cache if they were already created.
         - Example:
            Resizing of window for drawing a rectangle should not regenerate the lines of the rectangle. 
            We have an adapter here that takes care of drawing lines that adapt the drawPoints interface.
