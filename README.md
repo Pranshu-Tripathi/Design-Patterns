@@ -62,16 +62,17 @@ Makes testing tough because of the hard dependency it adds to clients' implement
 The solution is dependency inversion by using a mock class that overrides these methods and provides dummy implementations. (almost all of the maestro-src mock files)
 
 ### Adapter Pattern
-Getting the interface you want from the interface you have.
-A construct that adapts an existing interface X to conform to the required interface Y.
-Adapters can be used to cache the temporary objects.
-Intermediate representation can pile up: use caching and other optimizations
-Maintain a hash of already created objects.
-We can return objects from the cache if were already created.
-Example:
-Resizing of window for drawing a rectangle should not regenerate the lines of the rectangle. 
-We have an adapter here that takes care of drawing lines that adapt the drawPoints interface.
-We can hash and cache these lines so that the issue of repetitive generation can be avoided.
+
+  - Getting the interface you want from the interface you have.
+  - A construct/mechanism that adapts an existing interface X to conform to the required interface Y.
+  - Adapters can be used to cache the temporary objects.
+     - Intermediate representation can pile up: use caching and other optimizations
+     - Maintain a hash of already created objects.
+     - We can return objects from the cache if were already created.
+        - Example:
+           Resizing of window for drawing a rectangle should not regenerate the lines of the rectangle. 
+           We have an adapter here that takes care of drawing lines that adapt the drawPoints interface.
+           We can hash and cache these lines so that the issue of repetitive generation can be avoided.
 
 ### Bridge Design Pattern
 Connecting components through abstraction
