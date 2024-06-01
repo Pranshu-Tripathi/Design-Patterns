@@ -12,7 +12,7 @@ This project contains example-based basic implementations of different LLD patte
  - Liskov Substitution Principle
     - Able to substitute the derived class object at any place where we use the base class object.
  - Interface Segregation Principle
-    - Slip interface to separate interface
+    - Split interface to separate interface
     - States no code should be forced to depend on methods it doesn’t use.
  - Dependency Inversion Principle
     - High-level modules should not depend on the low-level modules and vice versa. They should depend on the abstraction.
