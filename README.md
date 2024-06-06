@@ -77,11 +77,14 @@ The solution is dependency inversion by using a mock class that overrides these 
            We can hash and cache these lines so that the issue of repetitive generation can be avoided.
 
 ### Bridge Design Pattern
-Connecting components through abstraction
-If a hierarchy has 3 classes, and it is using a hierarchy of 3 classes then a simple inheritance approach will create 9 classes (called Cartesian Product Duplication - One product class duplicated solely to confide with another product class). To avoid this we use a bridge pattern.
-A mechanism that decouples an interface hierarchy from an implementation hierarchy.
-Pimpl Implementation:
-Used when we don’t want to expose implementation details in .h files.
+
+  - `Connecting components through abstraction.`
+  - Cartesian Product Duplication is avoided using the bridge pattern.
+    - One product class duplicated solely to confide with another product class
+    - If we want to have a class that provides the combined functionality of 2 different hierarchies (say H1 with 3 classes and H2 with 3 classes), then to accommodate this using a simple inheritance approach we will end up with 9 classes.
+  - A mechanism that decouples an interface hierarchy from an implementation hierarchy.
+    - Pimpl Implementation:
+    - Used when we don’t want to expose implementation details in .h files.
 
 ### Composite Design Pattern
 A mechanism for treating individual (scalar) objects and composition (group) of objects in a similar manner.
