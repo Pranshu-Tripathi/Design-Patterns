@@ -21,12 +21,18 @@ This project contains example-based basic implementations of different LLD patte
 
 
 ### Builder Design Pattern
-Subclassing for every edge case will cause too many classes to handle.
-Massive constructors are a false sense of security and smell in client code.
-When piecewise object construction is complicated, provide an API for doing that.
-To make the builder fluent return this
-Different facets of an object can be built with different builders working in tandem via a base class.
-Potential for Incomplete Objects: If the client code forgets to call certain builder methods, it’s possible to create incomplete or inconsistent objects, leading to runtime errors.
+
+  - `Object creation is a complicated, step by step, construction of complex components`
+  - Subclassing for every edge case will cause too many classes to handle.
+    - You have lots of conditions to build an object. Now creating a sub-class for each condition will create this issue eventually.
+  - Massive constructors are a false sense of security and smell in client code.
+    - These constructor parameters can easily cause confusion if not passed correctly by the client.
+    - They will add a lot of pieces of code to the client's implementation for object creation purposes.
+  - When piecewise object construction is complicated, provide an API for doing that.
+    - Each builder API constructs a single component.
+    - If the order of the piecewise object creation matters and the creation code is repetitive, then we can have a Director class at a higher level, to call API set in the required order.
+  - To make the builder fluent return these different facets of an object can be built with different builders working in tandem via a base class.
+  - `Potential for Incomplete Objects`: If the client code forgets to call certain builder methods, it’s possible to create incomplete or inconsistent objects, leading to runtime errors.
 
 ### Factory Design Pattern
 Creates objects without exposing the creation logic to the client (Creator) and refers to the newly created object using a common interface (Product)
