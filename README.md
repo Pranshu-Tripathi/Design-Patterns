@@ -144,11 +144,13 @@ Different proxies like logging, communication, etc have completely different beh
 To create a proxy just focus on replicating the interface of the underlying object.
 
 ### Chain Of Responsibility
-The sequence of handlers processing an event one after another.
-A chain of components that will get a chance to process a command or a query, optionally having a default implementation and the ability to terminate the processing chain.
-The approach can be of two types:
-Centralized list.
-De-Centralized list.
+
+  - `A sequence of handlers processing an event one after another.`
+  - A chain of components that will get a chance to process a command or a query, optionally having a default implementation and the ability to terminate the processing chain.
+  - The approach can be of two types:
+    - `Centralized list` has a chain manager class that maintains a list of all the chain components and will trigger the process action on each one of them.
+    - `De-Centralized list` has all the components holding a pointer to each chain component next to them, and will polymorphically process actions one by one.
+  - Logging, Response Team, Coroutines, GUI event handlers etc.
 
 ### Command Design Pattern
 An object which represents a set of instructions to perform a particular action. Contains all the necessary information to act.
