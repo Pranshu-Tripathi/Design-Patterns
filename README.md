@@ -207,8 +207,12 @@ Define constituent parts as abstract methods.
 Inherit the algorithm class and define the abstract methods as required.
 
 ### Strategy Design pattern (Policy pattern in C++)
-System behavior is partially specified at runtime and is augmented later on.
-Enables the exact behavior of a system at runtime (dynamic) or at compile time (static).
+
+  - `System behavior is partially specified at runtime and is augmented later on`.
+  - Useful when we have multiple policies for same result, like sorting.
+  - Enables the exact behavior of a system at runtime (dynamic) or at compile time (static).
+  - Dynamic requires client caution on the order of calling functions. set_format has to be called before append_list.
+  - Static is safe once complied but the object is not transformable to other types at run-time.
 
 ### Visitor Design Pattern
 A pattern where a component (visitor) is allowed to traverse the entire inheritance hierarchy. Implemented by propagating a single visit() method throughout the entire hierarchy.
