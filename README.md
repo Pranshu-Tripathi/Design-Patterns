@@ -215,10 +215,14 @@ Inherit the algorithm class and define the abstract methods as required.
   - Static is safe once complied but the object is not transformable to other types at run-time.
 
 ### Visitor Design Pattern
-A pattern where a component (visitor) is allowed to traverse the entire inheritance hierarchy. Implemented by propagating a single visit() method throughout the entire hierarchy.
-Intrusive Visitor: Simply pass the visitor object around.
-Reflective Visitor: Have a separate class that based on the dynamic cast will get the correct object type and then perform the required operation.
-Classic Double Dispatch: Visitables override accept and Visitors override visit. This is a kind of hacking around to get the correct object type called through compile time polymorphism. Also called the Cyclic visitor. It is useful when a visitor is needed on a stable hierarchy.
-Acyclic Visitor: Uses the Reccuring Template pattern, and is useful with unstable hierarchy. With minimal change, one can add and remove visitables.
-MultiMethod Visitor: This is a complicated way of basically overloading signatures for multiple argument type inference. (Example: Collision of asteroid, planet, and spaceship)
-std::variant: Using std::visit kind of allows one to perform operations based on type inference.
+  - `A pattern where a component (visitor) is allowed to traverse the entire inheritance hierarchy.` 
+  - Implemented by propagating a single visit() method throughout the entire hierarchy.
+  - `Intrusive Visitor`: Simply pass the visitor object around.
+  - `Reflective Visitor`: Have a separate class that based on the dynamic cast will get the correct object type and then perform the required operation.
+  - `Classic Double Dispatch`: 
+     - Visitables override accept and Visitors override visit.
+     - This is a kind of hacking around to get the correct object type called through compile time polymorphism.
+     - Also called the Cyclic visitor. It is useful when a visitor is needed on a stable hierarchy.
+  - `Acyclic Visitor`: Uses the Reccuring Template pattern, and is useful with unstable hierarchy. With minimal change, one can add and remove visitables.
+  - `MultiMethod Visitor`: This is a complicated way of basically overloading signatures for multiple argument type inference. (Example: Collision of asteroid, planet, and spaceship)
+  - `std::variant`: Using std::visit kind of allows one to perform operations based on type inference.
